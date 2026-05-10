@@ -6,7 +6,7 @@ package dao;
 
 /**
  * Crud 
- * @author u10047649100
+ * @author u10392310120
  */
 public abstract class DaoAbstract {
     public abstract void insert(Object object);

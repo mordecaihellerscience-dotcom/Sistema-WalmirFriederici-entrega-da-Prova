@@ -186,7 +186,7 @@ public class JDlgWhfClientes extends javax.swing.JDialog {
 
         jLabel15.setText("Código");
 
-        jCboWhfSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sexo", "Feminino", "Masculino", " " }));
+        jCboWhfSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Feminino", "Masculino" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
