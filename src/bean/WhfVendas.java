@@ -13,6 +13,8 @@ public class WhfVendas {
     private int idwhf_Vendas;
     private int whf_cliente;
     private int whf_vendedor;
+    private Date whf_dataVenda;
+    private double whf_total;
 
     public int getIdwhf_Vendas() {
         return idwhf_Vendas;
@@ -53,6 +55,4 @@ public class WhfVendas {
     public void setWhf_total(double whf_total) {
         this.whf_total = whf_total;
     }
-    private Date whf_dataVenda;
-    private double whf_total;
-}
+    }

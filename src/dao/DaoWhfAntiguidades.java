@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.WhfVendedores;
+import bean.WhfAntiguidades;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,11 +17,11 @@ import teste.JdbcCrud;
  *
  * @author u10392310120
  */
-public class DaoWhfVendedores extends DaoAbstract {
+public class DaoWhfAntiguidades extends DaoAbstract {
     
     @Override
     public void insert(Object object) {
-        WhfVendedores whfVendedores = (WhfVendedores) object;
+        WhfAntiguidades whfAntiguidades = (WhfAntiguidades) object;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
@@ -32,15 +32,15 @@ public class DaoWhfVendedores extends DaoAbstract {
             cnt = DriverManager.getConnection(url, user, password);
             String sql = "insert into erp_usuarios values (?,?,?,?,?,?,?,?,?)";
             PreparedStatement pst = cnt.prepareStatement( sql );
-            pst.setInt(1, whfVendedores.getIdwhf_Vendedores());
-            pst.setString(2, whfVendedores.getWhf_nome());
-            pst.setString(3, whfVendedores.getWhf_descricao());
-            pst.setString(4, whfVendedores.getWhf_anoOrigem());
-            pst.setString(5, whfVendedores.getWhf_categoria());
-            pst.setInt(6, whfVendedores.getWhf_quantidade());
-            pst.setInt(7, whfVendedores.getWhf_fornecedor());
-            pst.setDouble(8, whfVendedores.getWhf_valor());
-            pst.setString(9, whfVendedores.getWhf_ativo());
+            pst.setInt(1, whfAntiguidades.getIdwhf_Antiguidades());
+            pst.setString(2,whfAntiguidades.getWhf_nome());
+            pst.setString(3,whfAntiguidades.getWhf_descricao());
+            pst.setString(4,whfAntiguidades.getWhf_anoOrigem());
+            pst.setInt(5,whfAntiguidades.getWhf_categoria());
+            pst.setInt(6, whfAntiguidades.getWhf_quantidade());
+            pst.setInt(7,whfAntiguidades.getWhf_fornecedor());
+            pst.setDouble(8, whfAntiguidades.getWhf_valor());
+            pst.setString(9, whfAntiguidades.getWhf_ativo());
             pst.executeUpdate();
 
         } catch (ClassNotFoundException ex) {

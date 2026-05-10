@@ -4,7 +4,7 @@
  */
 package dao;
 
-import bean.WhfVendedores;
+import bean.WhfCompras;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,11 +17,11 @@ import teste.JdbcCrud;
  *
  * @author u10392310120
  */
-public class DaoWhfVendedores extends DaoAbstract {
+public class DaoWhfCompras extends DaoAbstract {
     
     @Override
     public void insert(Object object) {
-        WhfVendedores whfVendedores = (WhfVendedores) object;
+        WhfCompras whfCompras = (WhfCompras) object;
         try {
             Class.forName("com.mysql.jdbc.Driver");
             String url, user, password;
@@ -30,17 +30,13 @@ public class DaoWhfVendedores extends DaoAbstract {
             password = "walmir_silva";
             Connection cnt;
             cnt = DriverManager.getConnection(url, user, password);
-            String sql = "insert into erp_usuarios values (?,?,?,?,?,?,?,?,?)";
+            String sql = "insert into erp_usuarios values (?,?,?,?,?)";
             PreparedStatement pst = cnt.prepareStatement( sql );
-            pst.setInt(1, whfVendedores.getIdwhf_Vendedores());
-            pst.setString(2, whfVendedores.getWhf_nome());
-            pst.setString(3, whfVendedores.getWhf_descricao());
-            pst.setString(4, whfVendedores.getWhf_anoOrigem());
-            pst.setString(5, whfVendedores.getWhf_categoria());
-            pst.setInt(6, whfVendedores.getWhf_quantidade());
-            pst.setInt(7, whfVendedores.getWhf_fornecedor());
-            pst.setDouble(8, whfVendedores.getWhf_valor());
-            pst.setString(9, whfVendedores.getWhf_ativo());
+            pst.setInt(1, whfCompras.getIdwhf_Compras());
+            pst.setInt(2, whfCompras.getWhf_fornecedor());
+            pst.setInt(3, whfCompras.getWhf_vendedor());
+            pst.setDate(4, null);
+            pst.setDouble(5, whfCompras.getWhf_total());
             pst.executeUpdate();
 
         } catch (ClassNotFoundException ex) {
